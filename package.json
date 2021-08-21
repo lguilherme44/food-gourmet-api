@@ -30,5 +30,6 @@
   "devDependencies": {},
   "autoload": {
     "App": "./app"
-  }
+  },
+  "node": "11.10.0"
 }
