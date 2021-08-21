@@ -5,10 +5,9 @@
   "description": "Adonisjs boilerplate for API server with pre-configured JWT",
   "main": "index.js",
   "scripts": {
-    "build": "ENV_SILENT=true node ace build --prod",
-    "start": "ENV_SILENT=true node ace serve --watch",
-    "start:prod": "ENV_SILENT=true node ./build/server.js",
-    "dev": "adonis serve --dev"
+    "build": "node ace build --production",
+    "start": "ENV_SILENT=true node server.js",
+    "dev": "node ace serve --watch"
   },
   "keywords": [
     "adonisjs",
