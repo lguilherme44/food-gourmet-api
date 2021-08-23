@@ -12,17 +12,12 @@ class SessionController {
   async logout({ request, response, auth }) {
     const refreshToken = request.input("refreshToken");
     if (!refreshToken) {
-      // You can throw any exception you want here
-      return `Refresh Token missing`;
+      return response.status(400).send({ message: "Token não informado." });
     }
 
     await auth.authenticator("jwt").revokeTokens([refreshToken], true);
 
     return response.send({ status: 200, message: "success" });
-  }
-
-  async getUser({ auth }) {
-    return await auth.getUser();
   }
 }
 
