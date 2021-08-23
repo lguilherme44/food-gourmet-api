@@ -1,12 +1,12 @@
 "use strict";
 
 class SessionController {
-  async create({ request, auth }) {
+  async create({ request, auth, session }) {
     const { email, password } = request.all();
 
-    const token = await auth.withRefreshToken().attempt(email, password);
+    const authCheck = await auth.attempt(email, password);
 
-    return token;
+    return authCheck;
   }
 
   async logout({ request, response, auth }) {
