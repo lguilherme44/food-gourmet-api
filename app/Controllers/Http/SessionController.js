@@ -4,9 +4,9 @@ class SessionController {
   async create({ request, auth, session }) {
     const { email, password } = request.all();
 
-    const authCheck = await auth.attempt(email, password);
+    const login = await auth.attempt(email, password);
 
-    return authCheck;
+    return login;
   }
 
   async logout({ request, response, auth }) {
