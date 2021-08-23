@@ -25,6 +25,8 @@ Route.post("/users", "UserController.create");
 
 // autenticação
 Route.post("/sessions", "SessionController.create");
+Route.get("/logout", "SessionController.logout");
+Route.get("/get-user", "SessionController.getUser");
 
-// Route.resource("foods", "FoodController").apiOnly().middleware("auth");
-Route.resource("foods", "FoodController").apiOnly();
+Route.resource("foods", "FoodController").apiOnly().middleware("auth");
+// Route.resource("foods", "FoodController").apiOnly();
